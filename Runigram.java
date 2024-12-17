@@ -207,11 +207,11 @@ public static Color[][] grayScaled(Color[][] image) {
      * Ensures RGB values remain in the range [0, 255].
      */
 	private static int clamp(int value) {
-		int clamped = Math.max(0, Math.min(255, value));
-		if (value != clamped) {
-			System.out.println("Clamping value: " + value + " to " + clamped);
+		int clamped1 = Math.max(0, Math.min(255, value));
+		if (value != clamped1) {
+			System.out.println("Clamping value: " + value + " to " + clamped1);
 		}
-		return clamped;
+		return clamped1;
 	}
 	
 
