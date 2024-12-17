@@ -118,7 +118,7 @@ public class Runigram {
 		int red = pixel.getRed();
 		int green = pixel.getGreen();
 		int blue = pixel.getBlue();
-		int lum = (int) Math.round(0.299 * red + 0.587 * green + 0.114 * blue);
+		int lum = (int) (0.299 * red + 0.587 * green + 0.114 * blue);
 		return new Color(lum, lum, lum);
 	}
 	
@@ -178,9 +178,9 @@ public static Color[][] grayScaled(Color[][] image) {
 	 * values in the two input color.
 	 */
 	public static Color blend(Color c1, Color c2, double alpha) {
-		int red = (int) Math.floor(alpha * c1.getRed() + (1.0 - alpha) * c2.getRed() + 0.5);
-		int green = (int) Math.floor(alpha * c1.getGreen() + (1.0 - alpha) * c2.getGreen() + 0.5);
-		int blue = (int) Math.floor(alpha * c1.getBlue() + (1.0 - alpha) * c2.getBlue() + 0.5);
+		int red = (int) ((alpha * c1.getRed() + (1.0 - alpha) * c2.getRed()));
+		int green = (int) ((alpha * c1.getGreen() + (1.0 - alpha) * c2.getGreen()));
+		int blue = (int) ((alpha * c1.getBlue() + (1.0 - alpha) * c2.getBlue()));
 		return new Color(clamp(red), clamp(green), clamp(blue));
 	}
 	
